@@ -3,11 +3,11 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryItems = [
-    { src: '/src/assets/images/123f95dd-f584-43e6-9ac0-f6fb3e775cc5.jpg', label: 'Adaptacija stana' },
-    { src: '/src/assets/images/05b94ee7-f485-48fb-957e-e095075d2bc5.jpg', label: 'Uređenje poslovnog prostora' },
-    { src: '/src/assets/images/1a8b6919-48c0-4df9-b141-bd5e03c508f2.jpg', label: 'Moderna kupaonica' },
-    { src: '/src/assets/images/5c1d9666-aa7d-472b-92b9-e6070a37030d.jpg', label: 'Pripremni radovi' },
-    { src: '/src/assets/images/178dd085-c276-403c-a9e3-3562725d796c.jpg', label: 'Završni interijeri' },
+    { src: '/images/123f95dd-f584-43e6-9ac0-f6fb3e775cc5.jpg', label: 'Adaptacija stana' },
+    { src: '/images/05b94ee7-f485-48fb-957e-e095075d2bc5.jpg', label: 'Uređenje poslovnog prostora' },
+    { src: '/images/1a8b6919-48c0-4df9-b141-bd5e03c508f2.jpg', label: 'Moderna kupaonica' },
+    { src: '/images/5c1d9666-aa7d-472b-92b9-e6070a37030d.jpg', label: 'Pripremni radovi' },
+    { src: '/images/178dd085-c276-403c-a9e3-3562725d796c.jpg', label: 'Završni interijeri' },
 ];
 
 export function Gallery() {

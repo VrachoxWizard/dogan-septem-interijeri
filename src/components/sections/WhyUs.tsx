@@ -24,7 +24,7 @@ export function WhyUs() {
                     <div className="absolute -inset-6 border border-white/10 transform -translate-x-6 translate-y-6 z-0"></div>
                     <div className="absolute inset-0 bg-[#0a356c] z-10 overflow-hidden shadow-2xl">
                         <img
-                            src="/src/assets/images/e32d9f6f-6a19-4718-8de8-145251f63dc4.jpg"
+                            src="/images/e32d9f6f-6a19-4718-8de8-145251f63dc4.jpg"
                             alt="Precizna izvedba i detalji"
                             className="w-full h-full object-cover object-center grayscale-[10%] contrast-125 opacity-80"
                         />
