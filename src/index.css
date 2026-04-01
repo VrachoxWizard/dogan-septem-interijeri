@@ -1,0 +1,42 @@
+@import "tailwindcss";
+
+@theme {
+  --color-white: #ffffff;
+  --color-light-gray: #f9f9f9;
+  --color-brand-navy: #104c96;
+  --color-accent-orange: #efa42f;
+  --color-text-dark: #333333;
+  --color-text-gray: #555555;
+  --color-border-light: #e5e7eb;
+
+  /* We map standard tailwind colors to our custom ones to make utilities easier */
+  --color-primary: var(--color-brand-navy);
+  --color-accent: var(--color-accent-orange);
+  --color-background: var(--color-white);
+  --color-surface: var(--color-light-gray);
+  --color-foreground: var(--color-text-dark);
+  --color-muted: var(--color-text-gray);
+
+  --font-heading: "Montserrat", sans-serif;
+  --font-body: "Inter", sans-serif;
+}
+
+@layer base {
+  :root {
+    font-family: var(--font-body);
+    color: var(--color-foreground);
+    background-color: var(--color-background);
+  }
+
+  body {
+    margin: 0;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-heading);
+    font-weight: 700;
+    color: var(--color-primary);
+  }
+}
