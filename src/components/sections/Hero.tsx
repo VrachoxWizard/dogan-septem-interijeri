@@ -25,7 +25,7 @@ export function Hero() {
                         <span className="w-12 h-px bg-[var(--color-accent)]"></span>
                         Vrhunske adaptacije
                     </div>
-                    <h1 className="font-heading font-bold text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8">
+                    <h1 className="font-heading font-bold text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8">
                         Prostor koji ima smisla. <br />
                         <span className="text-white/90 font-light">Izvedba koja ima standard.</span>
                     </h1>
