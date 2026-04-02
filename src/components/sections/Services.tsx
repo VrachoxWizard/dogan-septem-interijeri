@@ -1,5 +1,5 @@
 import { Section } from '../layout/Section';
-import { Home, Briefcase, Hammer, Waves, Grid, Zap, PaintRoller, ClipboardCheck } from 'lucide-react';
+import { Home, Briefcase, Hammer, Waves, Grid, Zap, PaintRoller, ClipboardCheck, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
 
 const services = [
@@ -10,6 +10,7 @@ const services = [
     { icon: Waves, title: 'Keramičarski radovi', desc: 'Precizno postavljanje keramike i svih vrsta podnih obloga.' },
     { icon: Zap, title: 'Instalacije', desc: 'Izvođenje moderne elektro i vodoinstalacije sa certifikatima.' },
     { icon: PaintRoller, title: 'Završni radovi', desc: 'Soboslikarski poslovi i besprijekorna estetska završna obrada.' },
+    { icon: Sofa, title: 'Montaža namještaja', desc: 'Profesionalna montaža kuhinja, ormara, garderoba i ostalog namještaja po mjeri.' },
     { icon: ClipboardCheck, title: 'Koordinacija', desc: 'Cjelovito vođenje svih faza projekta – vi komunicirate samo sa nama.' }
 ];
 
