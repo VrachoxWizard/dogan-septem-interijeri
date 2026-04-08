@@ -7,7 +7,7 @@ export function Footer() {
             <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
                     <div className="md:col-span-5 lg:col-span-4">
-                        <Logo className="mb-6" />
+                        <Logo size="footer" className="mb-6" />
                         <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm">
                             Prostor koji ima smisla. Izvedba koja ima standard. Kompletne adaptacije i uređenje interijera.
                         </p>

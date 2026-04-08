@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Logo Wide Generator</title>
+</head>
+<body>
+  <canvas id="c" width="600" height="120"></canvas>
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const W = 600, H = 120;
+    const GOLD = '#efa42f';
+
+    // Transparent background
+    ctx.clearRect(0, 0, W, H);
+
+    // Corner accents on left box
+    const boxSize = 80;
+    const boxX = 10, boxY = (H - boxSize) / 2;
+    const cLen = 16, cThick = 2.5;
+    ctx.strokeStyle = GOLD;
+    ctx.lineWidth = cThick;
+    // Top-left
+    ctx.beginPath(); ctx.moveTo(boxX, boxY + cLen); ctx.lineTo(boxX, boxY); ctx.lineTo(boxX + cLen, boxY); ctx.stroke();
+    // Top-right
+    ctx.beginPath(); ctx.moveTo(boxX + boxSize - cLen, boxY); ctx.lineTo(boxX + boxSize, boxY); ctx.lineTo(boxX + boxSize, boxY + cLen); ctx.stroke();
+    // Bottom-left
+    ctx.beginPath(); ctx.moveTo(boxX, boxY + boxSize - cLen); ctx.lineTo(boxX, boxY + boxSize); ctx.lineTo(boxX + cLen, boxY + boxSize); ctx.stroke();
+    // Bottom-right
+    ctx.beginPath(); ctx.moveTo(boxX + boxSize - cLen, boxY + boxSize); ctx.lineTo(boxX + boxSize, boxY + boxSize); ctx.lineTo(boxX + boxSize, boxY + boxSize - cLen); ctx.stroke();
+
+    // DS monogram inside box
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 28px Arial Black, Arial, sans-serif';
+    ctx.textAlign = 'center';
+    ctx.textBaseline = 'middle';
+    ctx.fillText('DS', boxX + boxSize / 2, boxY + boxSize / 2);
+
+    // DOGAN SEPTEM
+    const textX = boxX + boxSize + 20;
+    ctx.fillStyle = '#ffffff';
+    ctx.font = 'bold 36px Arial Black, Arial, sans-serif';
+    ctx.textAlign = 'left';
+    ctx.textBaseline = 'alphabetic';
+    ctx.fillText('DOGAN SEPTEM', textX, H / 2 + 2);
+
+    // INTERIJERI
+    ctx.fillStyle = GOLD;
+    ctx.font = '300 14px Arial, sans-serif';
+    ctx.letterSpacing = '8px';
+    ctx.fillText('INTERIJERI', textX + 2, H / 2 + 24);
+
+    // Save as download
+    canvas.toBlob(blob => {
+      const a = document.createElement('a');
+      a.href = URL.createObjectURL(blob);
+      a.download = 'logo-wide.png';
+      a.click();
+      URL.revokeObjectURL(a.href);
+    }, 'image/png');
+  </script>
+</body>
+</html>
