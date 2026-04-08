@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dogan Septem – Logo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #000;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+    }
+    .card {
+      width: 1000px;
+      height: 1000px;
+      background: linear-gradient(145deg, #0c2d5a 0%, #104c96 45%, #0a2244 100%);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      font-family: 'Montserrat', sans-serif;
+    }
+
+    /* Geometric corner accents */
+    .card::before {
+      content: '';
+      position: absolute;
+      top: 40px;
+      left: 40px;
+      width: 120px;
+      height: 120px;
+      border-top: 3px solid #efa42f;
+      border-left: 3px solid #efa42f;
+      opacity: 0.7;
+    }
+    .card::after {
+      content: '';
+      position: absolute;
+      bottom: 40px;
+      right: 40px;
+      width: 120px;
+      height: 120px;
+      border-bottom: 3px solid #efa42f;
+      border-right: 3px solid #efa42f;
+      opacity: 0.7;
+    }
+
+    /* Subtle grid overlay */
+    .grid-overlay {
+      position: absolute;
+      inset: 0;
+      background-image:
+        linear-gradient(rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(255,255,255,0.03) 1px, transparent 1px);
+      background-size: 80px 80px;
+    }
+
+    /* Decorative circle behind text */
+    .glow {
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      background: radial-gradient(circle, rgba(239,164,47,0.08) 0%, transparent 70%);
+      border-radius: 50%;
+    }
+
+    .content {
+      position: relative;
+      z-index: 10;
+      text-align: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0;
+    }
+
+    .divider-top {
+      width: 60px;
+      height: 2px;
+      background: #efa42f;
+      margin-bottom: 36px;
+    }
+
+    .brand-name {
+      font-size: 96px;
+      font-weight: 900;
+      color: #ffffff;
+      letter-spacing: 6px;
+      line-height: 1;
+      text-transform: uppercase;
+    }
+
+    .brand-sub {
+      font-size: 32px;
+      font-weight: 400;
+      color: #efa42f;
+      letter-spacing: 18px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+
+    .divider-bottom {
+      width: 260px;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, #efa42f, transparent);
+      margin-top: 40px;
+    }
+
+    .tagline {
+      font-size: 13px;
+      font-weight: 400;
+      color: rgba(255,255,255,0.4);
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      margin-top: 20px;
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="grid-overlay"></div>
+    <div class="glow"></div>
+    <div class="content">
+      <div class="divider-top"></div>
+      <div class="brand-name">DOGAN<br>SEPTEM</div>
+      <div class="brand-sub">INTERIJERI</div>
+      <div class="divider-bottom"></div>
+      <div class="tagline">Zagreb · Sesvete</div>
+    </div>
+  </div>
+</body>
+</html>

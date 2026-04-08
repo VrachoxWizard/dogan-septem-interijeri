@@ -1,16 +1,13 @@
 
+import { Logo } from '../ui/Logo';
+
 export function Footer() {
     return (
         <footer className="bg-[var(--color-primary)] text-white pt-20 pb-10">
             <div className="container mx-auto px-6 md:px-12 lg:px-20">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
                     <div className="md:col-span-5 lg:col-span-4">
-                        <h3 className="font-heading font-bold text-3xl mb-2 tracking-tight">
-                            DOGAN SEPTEM
-                        </h3>
-                        <span className="block text-sm font-medium text-[var(--color-accent)] tracking-widest mb-6">
-                            INTERIJERI
-                        </span>
+                        <Logo variant="light" className="mb-6" />
                         <p className="text-gray-300 text-sm leading-relaxed mb-6 max-w-sm">
                             Prostor koji ima smisla. Izvedba koja ima standard. Kompletne adaptacije i uređenje interijera.
                         </p>

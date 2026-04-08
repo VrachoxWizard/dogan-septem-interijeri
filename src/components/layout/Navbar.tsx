@@ -1,6 +1,7 @@
 import { useState, useEffect } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
+import { Logo } from '../ui/Logo';
 import { cn } from '../../lib/utils';
 
 const navLinks = [
@@ -45,19 +46,8 @@ export function Navbar() {
                 )}
             >
                 <div className="container mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
-                    <a href="#" className="flex-shrink-0 z-50 pt-1" onClick={() => setMobileMenuOpen(false)}>
-                        <span className={cn(
-                            "font-heading font-bold text-2xl md:text-3xl tracking-tight transition-colors",
-                            isScrolled || mobileMenuOpen ? "text-[var(--color-primary)]" : "text-white"
-                        )}>
-                            DOGAN SEPTEM
-                        </span>
-                        <span className={cn(
-                            "block text-sm md:text-[0.95rem] font-semibold tracking-[0.25em] mt-0.5 transition-colors",
-                            isScrolled || mobileMenuOpen ? "text-[var(--color-accent)]" : "text-[var(--color-accent)]"
-                        )}>
-                            INTERIJERI
-                        </span>
+                    <a href="#" className="flex-shrink-0 z-50" onClick={() => setMobileMenuOpen(false)}>
+                        <Logo variant={isScrolled || mobileMenuOpen ? 'dark' : 'light'} />
                     </a>
 
                     {/* Desktop Nav */}
