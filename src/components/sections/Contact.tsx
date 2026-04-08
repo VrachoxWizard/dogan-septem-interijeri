@@ -57,7 +57,7 @@ export function Contact() {
 
                             <div className="relative mb-12 mt-6">
                                 <textarea id="message" required rows={4} className="peer w-full pt-4 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)] resize-none" placeholder="Vaša poruka"></textarea>
-                                <label htmlFor="message" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Vaša posuka i detalji</label>
+                                <label htmlFor="message" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Vaša poruka i detalji</label>
                             </div>
 
                             <Button type="submit" variant="accent" size="lg" className="w-full text-base shadow-sm">
