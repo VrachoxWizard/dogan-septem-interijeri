@@ -2,9 +2,133 @@
 <html>
 <head>
   <meta charset="UTF-8" />
-  <title>Dogan Septem – Logo</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700;900&display=swap" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <title>Dogan Septem – Logo PNG</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: #111;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 24px;
+      min-height: 100vh;
+    }
+    canvas { display: block; }
+    button {
+      padding: 14px 40px;
+      background: #efa42f;
+      color: #0c2d5a;
+      font-family: sans-serif;
+      font-weight: 700;
+      font-size: 14px;
+      letter-spacing: 3px;
+      text-transform: uppercase;
+      border: none;
+      cursor: pointer;
+    }
+    button:hover { background: #f5b84a; }
+  </style>
+</head>
+<body>
+  <canvas id="c" width="1000" height="1000"></canvas>
+  <button onclick="download()">⬇ PREUZMI PNG</button>
+
+  <script>
+    const canvas = document.getElementById('c');
+    const ctx = canvas.getContext('2d');
+    const W = 1000, H = 1000;
+    const NAVY = '#0d3060';
+    const GOLD = '#efa42f';
+
+    function draw() {
+      // Background gradient
+      const bg = ctx.createLinearGradient(0, 0, W, H);
+      bg.addColorStop(0, '#0c2d5a');
+      bg.addColorStop(0.5, '#104c96');
+      bg.addColorStop(1, '#0a2244');
+      ctx.fillStyle = bg;
+      ctx.fillRect(0, 0, W, H);
+
+      // Subtle grid
+      ctx.strokeStyle = 'rgba(255,255,255,0.03)';
+      ctx.lineWidth = 1;
+      for (let x = 0; x <= W; x += 80) {
+        ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, H); ctx.stroke();
+      }
+      for (let y = 0; y <= H; y += 80) {
+        ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(W, y); ctx.stroke();
+      }
+
+      // Radial glow
+      const glow = ctx.createRadialGradient(W/2, H/2, 0, W/2, H/2, 300);
+      glow.addColorStop(0, 'rgba(239,164,47,0.07)');
+      glow.addColorStop(1, 'transparent');
+      ctx.fillStyle = glow;
+      ctx.fillRect(0, 0, W, H);
+
+      // Corner accents
+      const cSize = 80, cOffset = 50, cThick = 4;
+      ctx.strokeStyle = GOLD;
+      ctx.lineWidth = cThick;
+      // Top-left
+      ctx.beginPath(); ctx.moveTo(cOffset, cOffset + cSize); ctx.lineTo(cOffset, cOffset); ctx.lineTo(cOffset + cSize, cOffset); ctx.stroke();
+      // Top-right
+      ctx.beginPath(); ctx.moveTo(W - cOffset - cSize, cOffset); ctx.lineTo(W - cOffset, cOffset); ctx.lineTo(W - cOffset, cOffset + cSize); ctx.stroke();
+      // Bottom-left
+      ctx.beginPath(); ctx.moveTo(cOffset, H - cOffset - cSize); ctx.lineTo(cOffset, H - cOffset); ctx.lineTo(cOffset + cSize, H - cOffset); ctx.stroke();
+      // Bottom-right
+      ctx.beginPath(); ctx.moveTo(W - cOffset - cSize, H - cOffset); ctx.lineTo(W - cOffset, H - cOffset); ctx.lineTo(W - cOffset, H - cOffset - cSize); ctx.stroke();
+
+      // Top divider line
+      ctx.fillStyle = GOLD;
+      ctx.fillRect(W/2 - 50, 340, 100, 3);
+
+      // DOGAN
+      ctx.fillStyle = '#ffffff';
+      ctx.font = 'bold 130px Arial Black, Arial, sans-serif';
+      ctx.textAlign = 'center';
+      ctx.letterSpacing = '8px';
+      ctx.fillText('DOGAN', W / 2, 480);
+
+      // SEPTEM
+      ctx.fillText('SEPTEM', W / 2, 620);
+
+      // INTERIJERI
+      ctx.fillStyle = GOLD;
+      ctx.font = '300 36px Arial, sans-serif';
+      ctx.letterSpacing = '18px';
+      ctx.fillText('INTERIJERI', W / 2 + 10, 692);
+
+      // Bottom divider
+      const grad = ctx.createLinearGradient(W/2 - 180, 0, W/2 + 180, 0);
+      grad.addColorStop(0, 'transparent');
+      grad.addColorStop(0.5, GOLD);
+      grad.addColorStop(1, 'transparent');
+      ctx.fillStyle = grad;
+      ctx.fillRect(W/2 - 180, 724, 360, 1);
+
+      // Tagline
+      ctx.fillStyle = 'rgba(255,255,255,0.35)';
+      ctx.font = '300 18px Arial, sans-serif';
+      ctx.letterSpacing = '6px';
+      ctx.fillText('ZAGREB  ·  SESVETE', W / 2, 762);
+    }
+
+    function download() {
+      canvas.toBlob(blob => {
+        const a = document.createElement('a');
+        a.href = URL.createObjectURL(blob);
+        a.download = 'dogan-septem-logo.png';
+        a.click();
+        URL.revokeObjectURL(a.href);
+      }, 'image/png');
+    }
+
+    draw();
+  </script>
+</body>
+</html>
   <style>
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {

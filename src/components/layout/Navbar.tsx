@@ -47,7 +47,7 @@ export function Navbar() {
             >
                 <div className="container mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
                     <a href="#" className="flex-shrink-0 z-50" onClick={() => setMobileMenuOpen(false)}>
-                        <Logo variant={isScrolled || mobileMenuOpen ? 'dark' : 'light'} />
+                        <Logo />
                     </a>
 
                     {/* Desktop Nav */}
