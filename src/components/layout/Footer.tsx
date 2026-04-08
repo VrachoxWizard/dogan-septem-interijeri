@@ -21,15 +21,15 @@ export function Footer() {
                         <ul className="space-y-4 text-sm text-gray-300">
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Telefon</span>
-                                <a href="tel:[POSLOVNI_BROJ]" className="font-medium hover:text-white transition-colors text-base">[POSLOVNI_BROJ]</a>
+                                <a href="tel:0957962728" className="font-medium hover:text-white transition-colors text-base">095 796 2728</a>
                             </li>
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Email</span>
-                                <a href="mailto:[POSLOVNI_EMAIL]" className="font-medium hover:text-white transition-colors text-base">[POSLOVNI_EMAIL]</a>
+                                <a href="mailto:interijeri@dogan.hr" className="font-medium hover:text-white transition-colors text-base">interijeri@dogan.hr</a>
                             </li>
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Adresa</span>
-                                <span className="font-medium text-base">[ADRESA]</span>
+                                <span className="font-medium text-base">Varaždinska cesta 1, 10360 Sesvete</span>
                             </li>
                         </ul>
                     </div>

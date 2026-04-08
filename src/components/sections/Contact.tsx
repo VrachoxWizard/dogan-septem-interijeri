@@ -80,8 +80,8 @@ export function Contact() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Telefon</span>
-                                <a href="tel:[POSLOVNI_BROJ]" className="text-2xl font-heading font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
-                                    [POSLOVNI_BROJ]
+                                <a href="tel:0957962728" className="text-2xl font-heading font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
+                                    095 796 2728
                                 </a>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Dostupni smo od 08:00 do 16:00</span>
                             </div>
@@ -93,8 +93,8 @@ export function Contact() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Email</span>
-                                <a href="mailto:[POSLOVNI_EMAIL]" className="text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
-                                    [POSLOVNI_EMAIL]
+                                <a href="mailto:interijeri@dogan.hr" className="text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
+                                    interijeri@dogan.hr
                                 </a>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Odgovaramo unutar 24 sata</span>
                             </div>
@@ -107,10 +107,10 @@ export function Contact() {
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Adresa / Regija</span>
                                 <span className="block text-xl font-heading font-medium text-[var(--color-primary)]">
-                                    [ADRESA]
+                                    Varaždinska cesta 1, 10360 Sesvete
                                 </span>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">
-                                    Poslujemo na području: [PODRUČJE_USLUGE]
+                                    Poslujemo na području Zagreba i okolice
                                 </span>
                             </div>
                         </div>
