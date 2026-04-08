@@ -50,7 +50,7 @@ export function About() {
                     <div className="absolute -inset-6 border border-[var(--color-border-light)] transform translate-x-6 translate-y-6 z-0"></div>
                     <div className="absolute inset-0 bg-[var(--color-surface)] z-10 overflow-hidden shadow-2xl">
                         <img
-                            src="https://images.pexels.com/photos/2724749/pexels-photo-2724749.jpeg?auto=compress&cs=tinysrgb&w=1000"
+                            src="/images/about-team.jpg"
                             alt="Adaptacija interijera"
                             className="w-full h-full object-cover object-center"
                         />

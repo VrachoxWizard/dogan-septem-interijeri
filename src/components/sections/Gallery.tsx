@@ -3,11 +3,11 @@ import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 
 const galleryItems = [
-    { src: 'https://images.pexels.com/photos/1090638/pexels-photo-1090638.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Adaptacija stana' },
-    { src: 'https://images.pexels.com/photos/1080721/pexels-photo-1080721.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Uređenje poslovnog prostora' },
-    { src: 'https://images.pexels.com/photos/1457842/pexels-photo-1457842.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Moderna kupaonica' },
-    { src: 'https://images.pexels.com/photos/2208891/pexels-photo-2208891.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Pripremni radovi' },
-    { src: 'https://images.pexels.com/photos/1918291/pexels-photo-1918291.jpeg?auto=compress&cs=tinysrgb&w=800', label: 'Završni interijeri' },
+    { src: '/images/gallery-adaptacija-stana.jpg', label: 'Adaptacija stana' },
+    { src: '/images/gallery-poslovni-prostor.jpg', label: 'Uređenje poslovnog prostora' },
+    { src: '/images/gallery-kupaonica.jpg', label: 'Moderna kupaonica' },
+    { src: '/images/gallery-pripremni-radovi.jpg', label: 'Pripremni radovi' },
+    { src: '/images/gallery-zavrsni-interijeri.jpg', label: 'Završni interijeri' },
 ];
 
 export function Gallery() {
