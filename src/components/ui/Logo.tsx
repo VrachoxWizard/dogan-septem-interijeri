@@ -12,9 +12,6 @@ export function Logo({ variant = 'light', className }: LogoProps) {
         <div
             className={cn(
                 'relative inline-flex items-center gap-3 select-none px-3 py-2',
-                isLight
-                    ? 'border border-white/20'
-                    : 'border border-[var(--color-primary)]/25',
                 className
             )}
         >
