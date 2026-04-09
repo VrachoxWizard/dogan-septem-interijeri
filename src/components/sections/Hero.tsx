@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function Hero() {
     return (
-        <section className="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <section className="relative h-svh min-h-[500px] flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div
                 className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
@@ -14,7 +14,7 @@ export function Hero() {
                 <div className="absolute inset-0 bg-black/30"></div>
             </div>
 
-            <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28">
+            <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-20 pt-28 md:pt-32">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}

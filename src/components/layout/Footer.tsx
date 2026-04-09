@@ -4,7 +4,7 @@ import { Logo } from '../ui/Logo';
 export function Footer() {
     return (
         <footer className="bg-[var(--color-primary)] text-white pt-20 pb-10">
-            <div className="container mx-auto px-6 md:px-12 lg:px-20">
+            <div className="container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-12 lg:gap-8 mb-16">
                     <div className="md:col-span-5 lg:col-span-4">
                         <Logo size="footer" className="mb-6" />
@@ -34,11 +34,11 @@ export function Footer() {
                     <div className="md:col-span-4 lg:col-span-3">
                         <h4 className="font-heading font-bold text-lg mb-6 text-white">Usluge</h4>
                         <ul className="space-y-3 text-sm text-gray-300">
-                            <li className="hover:text-white transition-colors cursor-pointer">Adaptacije stanova</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Poslovni prostori</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Keramičarski radovi</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Suha gradnja</li>
-                            <li className="hover:text-white transition-colors cursor-pointer">Koordinacija projekta</li>
+                            <li><a href="#usluge" className="hover:text-white transition-colors">Adaptacije stanova</a></li>
+                            <li><a href="#usluge" className="hover:text-white transition-colors">Poslovni prostori</a></li>
+                            <li><a href="#usluge" className="hover:text-white transition-colors">Keramičarski radovi</a></li>
+                            <li><a href="#usluge" className="hover:text-white transition-colors">Suha gradnja</a></li>
+                            <li><a href="#usluge" className="hover:text-white transition-colors">Koordinacija projekta</a></li>
                         </ul>
                     </div>
                 </div>

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 
 export function Philosophy() {
     return (
-        <Section bg="light-gray" className="py-32 lg:py-48 border-y border-[var(--color-border-light)] overflow-hidden">
+        <Section bg="light-gray" className="py-20 md:py-32 lg:py-48 border-y border-[var(--color-border-light)] overflow-hidden">
             <div className="text-center max-w-5xl mx-auto px-4">
                 <motion.div
                     initial={{ opacity: 0, y: 30 }}

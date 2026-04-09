@@ -27,6 +27,7 @@ export function WhyUs() {
                             src="/images/whyus-interior.jpg"
                             alt="Precizna izvedba i detalji"
                             className="w-full h-full object-cover object-center grayscale-[10%] contrast-125 opacity-80"
+                            loading="lazy"
                         />
                         <div className="absolute inset-0 bg-[var(--color-primary)]/40 mix-blend-multiply"></div>
                     </div>

@@ -53,6 +53,7 @@ export function About() {
                             src="/images/about-team.jpg"
                             alt="Adaptacija interijera"
                             className="w-full h-full object-cover object-center"
+                            loading="lazy"
                         />
                     </div>
                 </motion.div>

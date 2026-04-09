@@ -30,11 +30,11 @@ export function TargetAudience() {
                         whileInView={{ opacity: 1, y: 0 }}
                         viewport={{ once: true, margin: "-50px" }}
                         transition={{ delay: index * 0.1, duration: 0.5, ease: [0.16, 1, 0.3, 1] }}
-                        className="flex flex-col h-full bg-[var(--color-surface)] p-10 md:p-12 group hover:bg-[var(--color-primary)] transition-colors duration-500"
+                        className="flex flex-col h-full bg-[var(--color-surface)] p-6 sm:p-8 md:p-12 group hover:bg-[var(--color-primary)] active:bg-[var(--color-primary)] transition-colors duration-500"
                     >
-                        <div className="w-10 h-px bg-[var(--color-accent)] mb-6 group-hover:bg-white transition-colors duration-500"></div>
-                        <h3 className="text-2xl font-heading font-bold text-[var(--color-primary)] mb-4 group-hover:text-white transition-colors duration-500">{audience.title}</h3>
-                        <p className="text-[var(--color-muted)] font-light leading-relaxed group-hover:text-gray-300 transition-colors duration-500 flex-grow">{audience.desc}</p>
+                        <div className="w-10 h-px bg-[var(--color-accent)] mb-6 group-hover:bg-white group-active:bg-white transition-colors duration-500"></div>
+                        <h3 className="text-2xl font-heading font-bold text-[var(--color-primary)] mb-4 group-hover:text-white group-active:text-white transition-colors duration-500">{audience.title}</h3>
+                        <p className="text-[var(--color-muted)] font-light leading-relaxed group-hover:text-gray-300 group-active:text-gray-300 transition-colors duration-500 flex-grow">{audience.desc}</p>
                     </motion.div>
                 ))}
             </div>

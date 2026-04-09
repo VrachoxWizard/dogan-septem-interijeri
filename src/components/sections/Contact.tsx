@@ -32,11 +32,11 @@ export function Contact() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                                 <div className="relative">
-                                    <input type="text" id="name" required className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Ime i prezime" />
+                                    <input type="text" id="name" required autoComplete="name" className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Ime i prezime" />
                                     <label htmlFor="name" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Ime i prezime</label>
                                 </div>
                                 <div className="relative">
-                                    <input type="text" id="contact" required className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Telefon ili email" />
+                                    <input type="text" id="contact" required autoComplete="email" className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Telefon ili email" />
                                     <label htmlFor="contact" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Telefon ili email</label>
                                 </div>
                             </div>
@@ -93,7 +93,7 @@ export function Contact() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Email</span>
-                                <a href="mailto:interijeri@dogan.hr" className="text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
+                                <a href="mailto:interijeri@dogan.hr" className="text-lg md:text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors break-all">
                                     interijeri@dogan.hr
                                 </a>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Odgovaramo unutar 24 sata</span>

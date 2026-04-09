@@ -51,16 +51,17 @@ export function Gallery() {
             <div className="overflow-hidden" ref={emblaRef}>
                 <div className="flex -ml-8">
                     {galleryItems.map((item, index) => (
-                        <div className="flex-[0_0_100%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0" key={index}>
+                        <div className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0" key={index}>
                             <div className="group relative h-[300px] md:h-[400px] lg:h-[450px] w-full overflow-hidden bg-[var(--color-surface)] cursor-grab active:cursor-grabbing border border-[var(--color-border-light)]">
                                 <img
                                     src={item.src}
                                     alt={item.label}
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                     draggable={false}
+                                    loading="lazy"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/90 via-[var(--color-primary)]/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-                                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-6 group-hover:translate-y-0 opacity-0 group-hover:opacity-100 transition-all duration-500">
+                                <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/90 via-[var(--color-primary)]/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
+                                <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-0 md:translate-y-6 md:group-hover:translate-y-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500">
                                     <div className="w-10 h-px bg-[var(--color-accent)] mb-4"></div>
                                     <span className="text-white font-heading font-bold text-2xl tracking-wide">{item.label}</span>
                                 </div>

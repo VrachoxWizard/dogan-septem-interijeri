@@ -51,7 +51,7 @@ export function Navbar() {
                     </a>
 
                     {/* Desktop Nav */}
-                    <nav className="hidden md:flex items-center space-x-8">
+                    <nav className="hidden lg:flex items-center space-x-8">
                         <ul className="flex space-x-8">
                             {navLinks.map((link) => (
                                 <li key={link.name}>
@@ -75,7 +75,7 @@ export function Navbar() {
                     {/* Mobile Menu Toggle */}
                     <button
                         className={cn(
-                            "md:hidden p-2 z-50 transition-colors cursor-pointer",
+                            "lg:hidden p-3 min-w-[44px] min-h-[44px] z-50 transition-colors cursor-pointer flex items-center justify-center",
                             isScrolled || mobileMenuOpen ? "text-[var(--color-primary)]" : "text-white"
                         )}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -88,7 +88,7 @@ export function Navbar() {
 
             {/* Mobile Nav Overlay completely outside header so it escapes the backdrop-filter stacking context */}
             <div className={cn(
-                "md:hidden fixed inset-0 z-40 transition-all duration-300 flex flex-col justify-center pt-20 bg-[var(--color-background)]",
+                "lg:hidden fixed inset-0 z-40 transition-all duration-300 flex flex-col justify-center pt-16 bg-[var(--color-background)]",
                 mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
             )}>
                 <div className="px-6 py-10 flex flex-col space-y-6 items-center overflow-y-auto">
