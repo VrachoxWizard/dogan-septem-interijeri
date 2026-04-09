@@ -14,27 +14,27 @@ export function Hero() {
                 <div className="absolute inset-0 bg-black/30"></div>
             </div>
 
-            <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-20 mt-16">
+            <div className="container relative z-10 mx-auto px-6 md:px-12 lg:px-20 pt-24 md:pt-28">
                 <motion.div
                     initial={{ opacity: 0, y: 40 }}
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="max-w-4xl text-white"
                 >
-                    <div className="inline-flex items-center gap-4 mb-8 tracking-[0.2em] text-xs font-bold uppercase text-[var(--color-accent)]">
+                    <div className="inline-flex items-center gap-4 mb-6 md:mb-8 tracking-[0.2em] text-xs font-bold uppercase text-[var(--color-accent)]">
                         <span className="w-12 h-px bg-[var(--color-accent)]"></span>
                         Vrhunske adaptacije
                     </div>
-                    <h1 className="font-heading font-bold text-white text-5xl md:text-6xl lg:text-7xl xl:text-8xl leading-[1.05] tracking-tight mb-8">
+                    <h1 className="font-heading font-bold text-white text-4xl sm:text-5xl md:text-6xl lg:text-7xl leading-[1.05] tracking-tight mb-6 md:mb-8">
                         Prostor koji ima smisla. <br />
                         <span className="text-white/90 font-light">Izvedba koja ima standard.</span>
                     </h1>
 
-                    <p className="text-lg md:text-xl text-gray-200 mb-12 max-w-2xl font-light leading-relaxed">
+                    <p className="text-base sm:text-lg md:text-xl text-gray-200 mb-8 md:mb-12 max-w-2xl font-light leading-relaxed">
                         Specijalizirani smo za adaptacije stanova i poslovnih prostora. Kompletna izvedba. Oslonite se na jednog partnera za cijeli projekt.
                     </p>
 
-                    <div className="flex flex-col sm:flex-row gap-5">
+                    <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
                         <a href="#kontakt" className="w-full sm:w-auto">
                             <Button variant="accent" size="lg" className="w-full">
                                 Zatraži ponudu

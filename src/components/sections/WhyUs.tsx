@@ -18,10 +18,10 @@ export function WhyUs() {
                     whileInView={{ opacity: 1, scale: 1 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-                    className="order-2 lg:order-1 relative h-[500px] lg:h-[700px] w-full"
+                    className="order-2 lg:order-1 relative h-[350px] md:h-[500px] lg:h-[700px] w-full"
                 >
                     {/* Decorative frame */}
-                    <div className="absolute -inset-6 border border-white/10 transform -translate-x-6 translate-y-6 z-0"></div>
+                    <div className="absolute -inset-6 border border-white/10 transform -translate-x-6 translate-y-6 z-0 hidden md:block"></div>
                     <div className="absolute inset-0 bg-[#0a356c] z-10 overflow-hidden shadow-2xl">
                         <img
                             src="/images/whyus-interior.jpg"

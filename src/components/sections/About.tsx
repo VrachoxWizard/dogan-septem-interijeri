@@ -44,10 +44,10 @@ export function About() {
                     whileInView={{ opacity: 1, x: 0 }}
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
-                    className="relative h-[600px] w-full mt-10 lg:mt-0"
+                    className="relative h-[350px] md:h-[450px] lg:h-[600px] w-full mt-10 lg:mt-0"
                 >
                     {/* Decorative architectural frame */}
-                    <div className="absolute -inset-6 border border-[var(--color-border-light)] transform translate-x-6 translate-y-6 z-0"></div>
+                    <div className="absolute -inset-6 border border-[var(--color-border-light)] transform translate-x-6 translate-y-6 z-0 hidden md:block"></div>
                     <div className="absolute inset-0 bg-[var(--color-surface)] z-10 overflow-hidden shadow-2xl">
                         <img
                             src="/images/about-team.jpg"

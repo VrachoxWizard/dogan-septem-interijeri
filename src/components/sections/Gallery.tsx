@@ -52,7 +52,7 @@ export function Gallery() {
                 <div className="flex -ml-8">
                     {galleryItems.map((item, index) => (
                         <div className="flex-[0_0_100%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0" key={index}>
-                            <div className="group relative h-[450px] w-full overflow-hidden bg-[var(--color-surface)] cursor-grab active:cursor-grabbing border border-[var(--color-border-light)]">
+                            <div className="group relative h-[300px] md:h-[400px] lg:h-[450px] w-full overflow-hidden bg-[var(--color-surface)] cursor-grab active:cursor-grabbing border border-[var(--color-border-light)]">
                                 <img
                                     src={item.src}
                                     alt={item.label}

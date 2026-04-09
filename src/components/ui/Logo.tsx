@@ -1,17 +1,21 @@
+import { cn } from '../../lib/utils';
+
 interface LogoProps {
     className?: string;
     size?: 'navbar' | 'footer';
+    variant?: 'light' | 'dark';
 }
 
 export function Logo({ className, size = 'navbar' }: LogoProps) {
-    const height = size === 'navbar' ? '110px' : '120px';
+    const sizeClasses = size === 'footer'
+        ? 'h-16 md:h-20 w-auto'
+        : 'h-10 md:h-12 lg:h-14 w-auto';
 
     return (
         <img
             src="/images/logo.png"
             alt="Dogan Septem Interijeri"
-            className={className}
-            style={{ height, width: 'auto' }}
+            className={cn(sizeClasses, className)}
         />
     );
 }
