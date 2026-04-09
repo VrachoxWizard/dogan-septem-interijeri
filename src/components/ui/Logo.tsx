@@ -3,7 +3,6 @@ import { cn } from '../../lib/utils';
 interface LogoProps {
     className?: string;
     size?: 'navbar' | 'footer';
-    variant?: 'light' | 'dark';
 }
 
 export function Logo({ className, size = 'navbar' }: LogoProps) {

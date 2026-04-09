@@ -54,6 +54,7 @@ export function About() {
                             alt="Adaptacija interijera"
                             className="w-full h-full object-cover object-center"
                             loading="lazy"
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         />
                     </div>
                 </motion.div>

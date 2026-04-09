@@ -7,6 +7,12 @@ interface SectionProps extends React.HTMLAttributes<HTMLElement> {
     id?: string;
 }
 
+const bgColors = {
+    'white': 'bg-[var(--color-background)]',
+    'light-gray': 'bg-[var(--color-surface)]',
+    'navy': 'bg-[var(--color-primary)] text-white',
+};
+
 export function Section({
     children,
     className,
@@ -15,14 +21,9 @@ export function Section({
     id,
     ...props
 }: SectionProps) {
-    const bgColors = {
-        'white': 'bg-[var(--color-background)]',
-        'light-gray': 'bg-[var(--color-surface)]',
-        'navy': 'bg-[var(--color-primary)] text-white',
-    };
 
     return (
-        <section id={id} className={cn("py-20 md:py-28", bgColors[bg], className)} {...props}>
+        <section id={id} className={cn("py-20 md:py-28 scroll-mt-20", bgColors[bg], className)} {...props}>
             <div className={cn("container mx-auto px-6 md:px-12 lg:px-20 max-w-7xl", containerClassName)}>
                 {children}
             </div>

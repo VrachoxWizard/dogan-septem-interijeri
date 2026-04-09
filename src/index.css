@@ -17,11 +17,18 @@
   --color-foreground: var(--color-text-dark);
   --color-muted: var(--color-text-gray);
 
+  --color-primary-dark: #0a356c;
+  --color-accent-dark: #e09118;
+
   --font-heading: "Montserrat", sans-serif;
   --font-body: "Inter", sans-serif;
 }
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
   :root {
     font-family: var(--font-body);
     color: var(--color-foreground);

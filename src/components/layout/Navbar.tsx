@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
@@ -14,6 +14,8 @@ const navLinks = [
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+    const hamburgerRef = useRef<HTMLButtonElement>(null);
+    const firstLinkRef = useRef<HTMLAnchorElement>(null);
 
     useEffect(() => {
         const handleScroll = () => {
@@ -27,10 +29,23 @@ export function Navbar() {
     useEffect(() => {
         if (mobileMenuOpen) {
             document.body.style.overflow = 'hidden';
+            firstLinkRef.current?.focus();
         } else {
             document.body.style.overflow = '';
         }
         return () => { document.body.style.overflow = ''; };
+    }, [mobileMenuOpen]);
+
+    // ESC key to close mobile menu
+    useEffect(() => {
+        function handleKeyDown(e: KeyboardEvent) {
+            if (e.key === 'Escape' && mobileMenuOpen) {
+                setMobileMenuOpen(false);
+                hamburgerRef.current?.focus();
+            }
+        }
+        document.addEventListener('keydown', handleKeyDown);
+        return () => document.removeEventListener('keydown', handleKeyDown);
     }, [mobileMenuOpen]);
 
     return (
@@ -47,7 +62,7 @@ export function Navbar() {
             >
                 <div className="container mx-auto px-6 md:px-12 lg:px-20 flex items-center justify-between">
                     <a href="#" className="flex-shrink-0 z-50" onClick={() => setMobileMenuOpen(false)}>
-                        <Logo variant={isScrolled || mobileMenuOpen ? 'dark' : 'light'} />
+                        <Logo />
                     </a>
 
                     {/* Desktop Nav */}
@@ -74,12 +89,15 @@ export function Navbar() {
 
                     {/* Mobile Menu Toggle */}
                     <button
+                        ref={hamburgerRef}
                         className={cn(
                             "lg:hidden p-3 min-w-[44px] min-h-[44px] z-50 transition-colors cursor-pointer flex items-center justify-center",
                             isScrolled || mobileMenuOpen ? "text-[var(--color-primary)]" : "text-white"
                         )}
                         onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                         aria-label="Toggle menu"
+                        aria-expanded={mobileMenuOpen}
+                        aria-controls="mobile-menu"
                     >
                         {mobileMenuOpen ? <X size={28} /> : <Menu size={28} />}
                     </button>
@@ -87,14 +105,15 @@ export function Navbar() {
             </header>
 
             {/* Mobile Nav Overlay completely outside header so it escapes the backdrop-filter stacking context */}
-            <div className={cn(
+            <div id="mobile-menu" className={cn(
                 "lg:hidden fixed inset-0 z-40 transition-all duration-300 flex flex-col justify-center pt-16 bg-[var(--color-background)]",
                 mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
             )}>
                 <div className="px-6 py-10 flex flex-col space-y-6 items-center overflow-y-auto">
-                    {navLinks.map((link) => (
+                    {navLinks.map((link, i) => (
                         <a
                             key={link.name}
+                            ref={i === 0 ? firstLinkRef : undefined}
                             href={link.href}
                             className="text-2xl font-heading font-bold text-center text-[var(--color-primary)] py-2 hover:text-[var(--color-accent)] transition-colors"
                             onClick={() => setMobileMenuOpen(false)}

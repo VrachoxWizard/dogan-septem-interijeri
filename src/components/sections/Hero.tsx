@@ -6,7 +6,7 @@ export function Hero() {
         <section className="relative h-svh min-h-[500px] flex items-center justify-center overflow-hidden">
             {/* Background Image */}
             <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat"
+                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-[var(--color-primary)]"
                 style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
             >
                 {/* Dark overlay for text readability as per reference */}

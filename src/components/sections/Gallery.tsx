@@ -1,3 +1,4 @@
+import { useState, useEffect, useCallback } from 'react';
 import { Section } from '../layout/Section';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
@@ -12,9 +13,23 @@ const galleryItems = [
 
 export function Gallery() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
+    const [selectedIndex, setSelectedIndex] = useState(0);
 
-    const scrollPrev = () => emblaApi && emblaApi.scrollPrev();
-    const scrollNext = () => emblaApi && emblaApi.scrollNext();
+    const scrollPrev = useCallback(() => emblaApi && emblaApi.scrollPrev(), [emblaApi]);
+    const scrollNext = useCallback(() => emblaApi && emblaApi.scrollNext(), [emblaApi]);
+
+    useEffect(() => {
+        if (!emblaApi) return;
+        const onSelect = () => setSelectedIndex(emblaApi.selectedScrollSnap());
+        emblaApi.on('select', onSelect);
+        onSelect();
+        return () => { emblaApi.off('select', onSelect); };
+    }, [emblaApi]);
+
+    function handleKeyDown(e: React.KeyboardEvent) {
+        if (e.key === 'ArrowLeft') { scrollPrev(); e.preventDefault(); }
+        if (e.key === 'ArrowRight') { scrollNext(); e.preventDefault(); }
+    }
 
     return (
         <Section id="galerija" bg="white" className="overflow-hidden py-24 md:py-32 border-b border-[var(--color-border-light)]">
@@ -48,7 +63,15 @@ export function Gallery() {
                 </div>
             </div>
 
-            <div className="overflow-hidden" ref={emblaRef}>
+            <div
+                className="overflow-hidden"
+                ref={emblaRef}
+                role="region"
+                aria-label="Galerija projekata"
+                aria-roledescription="carousel"
+                tabIndex={0}
+                onKeyDown={handleKeyDown}
+            >
                 <div className="flex -ml-8">
                     {galleryItems.map((item, index) => (
                         <div className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0" key={index}>
@@ -69,6 +92,22 @@ export function Gallery() {
                         </div>
                     ))}
                 </div>
+            </div>
+
+            {/* Position Indicators */}
+            <div className="flex justify-center gap-2 mt-8">
+                {galleryItems.map((_, index) => (
+                    <button
+                        key={index}
+                        className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
+                            index === selectedIndex
+                                ? 'bg-[var(--color-accent)] scale-125'
+                                : 'bg-[var(--color-border-light)] hover:bg-[var(--color-muted)]'
+                        }`}
+                        onClick={() => emblaApi?.scrollTo(index)}
+                        aria-label={`Idi na sliku ${index + 1}`}
+                    />
+                ))}
             </div>
         </Section>
     );

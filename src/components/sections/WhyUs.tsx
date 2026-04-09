@@ -11,7 +11,7 @@ const reasons = [
 
 export function WhyUs() {
     return (
-        <Section bg="navy" className="py-24 md:py-32">
+        <Section id="zasto-mi" bg="navy" className="py-24 md:py-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
                 <motion.div
                     initial={{ opacity: 0, scale: 0.95 }}
@@ -28,6 +28,7 @@ export function WhyUs() {
                             alt="Precizna izvedba i detalji"
                             className="w-full h-full object-cover object-center grayscale-[10%] contrast-125 opacity-80"
                             loading="lazy"
+                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
                         />
                         <div className="absolute inset-0 bg-[var(--color-primary)]/40 mix-blend-multiply"></div>
                     </div>
@@ -46,9 +47,9 @@ export function WhyUs() {
                         radimo <span className="text-[var(--color-accent)]">kako treba.</span>
                     </h2>
 
-                    <div className="space-y-8">
+                    <ol className="space-y-8 list-none">
                         {reasons.map((reason, index) => (
-                            <motion.div
+                            <motion.li
                                 key={index}
                                 initial={{ opacity: 0, y: 10 }}
                                 whileInView={{ opacity: 1, y: 0 }}
@@ -63,9 +64,9 @@ export function WhyUs() {
                                     <h4 className="text-xl font-heading font-bold text-white mb-1">{reason.title}</h4>
                                     <p className="text-gray-400 font-light">{reason.desc}</p>
                                 </div>
-                            </motion.div>
+                            </motion.li>
                         ))}
-                    </div>
+                    </ol>
                 </motion.div>
             </div>
         </Section>

@@ -45,10 +45,6 @@ export function Footer() {
 
                 <div className="border-t border-white/15 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
                     <p>&copy; {new Date().getFullYear()} Dogan Septem d.o.o. Sva prava pridržana.</p>
-                    <div className="mt-4 md:mt-0 space-x-6">
-                        <a href="#" className="hover:text-white transition-colors">Politika privatnosti</a>
-                        <a href="#" className="hover:text-white transition-colors">Uvjeti korištenja</a>
-                    </div>
                 </div>
             </div>
         </footer>

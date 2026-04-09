@@ -10,7 +10,7 @@ const audiences = [
 
 export function TargetAudience() {
     return (
-        <Section bg="white" className="py-24 md:py-32">
+        <Section id="za-koga" bg="white" className="py-24 md:py-32">
             <div className="text-center max-w-4xl mx-auto mb-20">
                 <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Za koga radimo</span>
                 <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-6 text-[var(--color-primary)]">
