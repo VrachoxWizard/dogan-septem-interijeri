@@ -594,3 +594,6 @@ The final result must feel:
 
 Do not settle for acceptable.
 Build something that looks expensive, intentional, and trustworthy.
+
+Reminder: Replace YOUR_WEB3FORMS_ACCESS_KEY in Contact.tsx:7 with your actual key from web3forms.com to activate the contact form.
+

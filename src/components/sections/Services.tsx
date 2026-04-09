@@ -1,18 +1,6 @@
 import { Section } from '../layout/Section';
-import { Home, Briefcase, Hammer, Waves, Grid, Zap, PaintRoller, ClipboardCheck, Sofa } from 'lucide-react';
 import { motion } from 'framer-motion';
-
-const services = [
-    { icon: Home, title: 'Adaptacije stanova', desc: 'Potpune ili djelomične renovacije stambenog prostora.' },
-    { icon: Briefcase, title: 'Poslovni prostori', desc: 'Uređenje ureda, lokala i komercijalnih objekata po najvišim standardima.' },
-    { icon: Hammer, title: 'Rušenja i priprema', desc: 'Stručno izvođenje svih pripremnih i rušilačkih radova uz odvoz materijala.' },
-    { icon: Grid, title: 'Suha gradnja', desc: 'Knauf sustavi, pregradni zidovi, spušteni stropovi i izolacije.' },
-    { icon: Waves, title: 'Keramičarski radovi', desc: 'Precizno postavljanje keramike i svih vrsta podnih obloga.' },
-    { icon: Zap, title: 'Instalacije', desc: 'Izvođenje moderne elektro i vodoinstalacije sa certifikatima.' },
-    { icon: PaintRoller, title: 'Završni radovi', desc: 'Soboslikarski poslovi i besprijekorna estetska završna obrada.' },
-    { icon: Sofa, title: 'Montaža namještaja', desc: 'Profesionalna montaža kuhinja, ormara, garderoba i ostalog namještaja po mjeri.' },
-    { icon: ClipboardCheck, title: 'Koordinacija', desc: 'Cjelovito vođenje svih faza projekta – vi komunicirate samo sa nama.' }
-];
+import { services } from '../../lib/data';
 
 export function Services() {
     return (

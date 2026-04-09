@@ -1,12 +1,6 @@
 import { Section } from '../layout/Section';
 import { motion } from 'framer-motion';
-
-const audiences = [
-    { title: 'Vlasnici stanova i kuća', desc: 'Oprostite se od stresa oko renovacije. Preuzimamo sve u dogovorenim rokovima sa garantiranom kvalitetom.' },
-    { title: 'Investitori', desc: 'Glatka i pouzdana egzekucija, uz strogo poštivanje vašeg troškovnika, vizije i rokova dovršetka.' },
-    { title: 'Tvrtke i uredi', desc: 'Efikasna adaptacija i prenamjena poslovnih prostora bez nepotrebnog ometanja vašeg poslovanja.' },
-    { title: 'Najmodavci', desc: 'Ciljane intervencije i brze adaptacije koje maksimiziraju i podižu vrijednost nekretnine na tržištu.' }
-];
+import { audiences } from '../../lib/data';
 
 export function TargetAudience() {
     return (

@@ -2,14 +2,7 @@ import { useState, useEffect, useCallback } from 'react';
 import { Section } from '../layout/Section';
 import useEmblaCarousel from 'embla-carousel-react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
-
-const galleryItems = [
-    { src: '/images/gallery-adaptacija-stana.jpg', label: 'Adaptacija stana' },
-    { src: '/images/gallery-poslovni-prostor.jpg', label: 'Uređenje poslovnog prostora' },
-    { src: '/images/gallery-kupaonica.jpg', label: 'Moderna kupaonica' },
-    { src: '/images/gallery-pripremni-radovi.jpg', label: 'Pripremni radovi' },
-    { src: '/images/gallery-zavrsni-interijeri.jpg', label: 'Završni interijeri' },
-];
+import { galleryItems } from '../../lib/data';
 
 export function Gallery() {
     const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true, align: 'start' });
@@ -74,7 +67,13 @@ export function Gallery() {
             >
                 <div className="flex -ml-8">
                     {galleryItems.map((item, index) => (
-                        <div className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0" key={index}>
+                        <div
+                            className="flex-[0_0_85%] sm:flex-[0_0_60%] lg:flex-[0_0_40%] pl-8 min-w-0"
+                            key={index}
+                            role="group"
+                            aria-roledescription="slide"
+                            aria-label={`Slika ${index + 1} od ${galleryItems.length}: ${item.label}`}
+                        >
                             <div className="group relative h-[300px] md:h-[400px] lg:h-[450px] w-full overflow-hidden bg-[var(--color-surface)] cursor-grab active:cursor-grabbing border border-[var(--color-border-light)]">
                                 <img
                                     src={item.src}

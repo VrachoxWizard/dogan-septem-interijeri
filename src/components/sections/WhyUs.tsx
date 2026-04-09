@@ -1,13 +1,6 @@
 import { Section } from '../layout/Section';
 import { motion } from 'framer-motion';
-
-const reasons = [
-    { title: "Sve kod jednog partnera", desc: "Nema pregovaranja s više izvođača." },
-    { title: "Kvalitetan i uigran tim", desc: "Zapošljavamo samo provjerene majstore." },
-    { title: "Fokus na detalje", desc: "Arhitektonski nadzor s pažnjom na finese." },
-    { title: "Poštivanje rokova", desc: "Vaše vrijeme je naš apsolutni prioritet." },
-    { title: "Odgovoran pristup", desc: "Radimo kao da je prostor naš vlastiti." }
-];
+import { whyUsReasons } from '../../lib/data';
 
 export function WhyUs() {
     return (
@@ -48,7 +41,7 @@ export function WhyUs() {
                     </h2>
 
                     <ol className="space-y-8 list-none">
-                        {reasons.map((reason, index) => (
+                        {whyUsReasons.map((reason, index) => (
                             <motion.li
                                 key={index}
                                 initial={{ opacity: 0, y: 10 }}

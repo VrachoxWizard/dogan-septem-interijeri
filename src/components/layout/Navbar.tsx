@@ -3,13 +3,7 @@ import { Menu, X } from 'lucide-react';
 import { Button } from '../ui/Button';
 import { Logo } from '../ui/Logo';
 import { cn } from '../../lib/utils';
-
-const navLinks = [
-    { name: 'O Nama', href: '#o-nama' },
-    { name: 'Usluge', href: '#usluge' },
-    { name: 'Pristup', href: '#pristup' },
-    { name: 'Projekti', href: '#galerija' },
-];
+import { NAV_LINKS } from '../../lib/constants';
 
 export function Navbar() {
     const [isScrolled, setIsScrolled] = useState(false);
@@ -68,7 +62,7 @@ export function Navbar() {
                     {/* Desktop Nav */}
                     <nav className="hidden lg:flex items-center space-x-8">
                         <ul className="flex space-x-8">
-                            {navLinks.map((link) => (
+                            {NAV_LINKS.map((link) => (
                                 <li key={link.name}>
                                     <a
                                         href={link.href}
@@ -105,12 +99,18 @@ export function Navbar() {
             </header>
 
             {/* Mobile Nav Overlay completely outside header so it escapes the backdrop-filter stacking context */}
-            <div id="mobile-menu" className={cn(
-                "lg:hidden fixed inset-0 z-40 transition-all duration-300 flex flex-col justify-center pt-16 bg-[var(--color-background)]",
-                mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
-            )}>
+            <div
+                id="mobile-menu"
+                role="dialog"
+                aria-modal={mobileMenuOpen}
+                aria-label="Navigacija"
+                className={cn(
+                    "lg:hidden fixed inset-0 z-40 transition-all duration-300 flex flex-col justify-center pt-16 bg-[var(--color-background)]",
+                    mobileMenuOpen ? "opacity-100 visible" : "opacity-0 invisible pointer-events-none"
+                )}
+            >
                 <div className="px-6 py-10 flex flex-col space-y-6 items-center overflow-y-auto">
-                    {navLinks.map((link, i) => (
+                    {NAV_LINKS.map((link, i) => (
                         <a
                             key={link.name}
                             ref={i === 0 ? firstLinkRef : undefined}

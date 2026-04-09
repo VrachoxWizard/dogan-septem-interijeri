@@ -3,8 +3,9 @@ import { Section } from '../layout/Section';
 import { Button } from '../ui/Button';
 import { Mail, Phone, MapPin, CheckCircle } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { BUSINESS } from '../../lib/constants';
 
-const WEB3FORMS_ACCESS_KEY = "YOUR_WEB3FORMS_ACCESS_KEY";
+const WEB3FORMS_ACCESS_KEY = import.meta.env.VITE_WEB3FORMS_ACCESS_KEY ?? '';
 
 export function Contact() {
     const [formData, setFormData] = useState({ name: '', contact: '', project: '', message: '' });
@@ -13,6 +14,13 @@ export function Contact() {
 
     async function handleSubmit(e: FormEvent) {
         e.preventDefault();
+
+        if (!WEB3FORMS_ACCESS_KEY) {
+            setStatus('error');
+            setErrorMsg('Obrazac trenutno nije dostupan. Kontaktirajte nas telefonom ili emailom.');
+            return;
+        }
+
         setStatus('loading');
         setErrorMsg('');
 
@@ -77,6 +85,9 @@ export function Contact() {
                         <form className="bg-white p-8 md:p-12 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-[var(--color-border-light)] relative z-10" onSubmit={handleSubmit}>
                             <h3 className="text-2xl font-heading font-bold text-[var(--color-primary)] mb-8">Pošaljite nam upit</h3>
 
+                            {/* Web3Forms honeypot — spam bots fill this, real users don't see it */}
+                            <input type="checkbox" name="botcheck" className="hidden" style={{ display: 'none' }} tabIndex={-1} autoComplete="off" />
+
                             {status === 'error' && (
                                 <div className="mb-6 p-4 bg-red-50 border border-red-200 text-red-700 text-sm">
                                     {errorMsg}
@@ -85,7 +96,7 @@ export function Contact() {
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
                                 <div className="relative">
-                                    <input type="text" id="name" name="name" required autoComplete="name" value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Ime i prezime" />
+                                    <input type="text" id="name" name="name" required minLength={2} autoComplete="name" value={formData.name} onChange={(e) => setFormData(prev => ({ ...prev, name: e.target.value }))} className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)]" placeholder="Ime i prezime" />
                                     <label htmlFor="name" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-3 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Ime i prezime</label>
                                 </div>
                                 <div className="relative">
@@ -109,7 +120,7 @@ export function Contact() {
                             </div>
 
                             <div className="relative mb-12 mt-6">
-                                <textarea id="message" name="message" required rows={4} value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} className="peer w-full pt-4 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)] resize-none" placeholder="Vaša poruka"></textarea>
+                                <textarea id="message" name="message" required minLength={10} rows={4} value={formData.message} onChange={(e) => setFormData(prev => ({ ...prev, message: e.target.value }))} className="peer w-full pt-4 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] placeholder-transparent outline-none transition-colors text-[var(--color-foreground)] resize-none" placeholder="Vaša poruka"></textarea>
                                 <label htmlFor="message" className="absolute left-0 -top-3.5 text-xs text-[var(--color-muted)] transition-all peer-placeholder-shown:text-base peer-placeholder-shown:top-4 peer-focus:-top-3.5 peer-focus:text-xs peer-focus:text-[var(--color-accent)] font-medium uppercase tracking-wider">Vaša poruka i detalji</label>
                             </div>
 
@@ -134,10 +145,10 @@ export function Contact() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Telefon</span>
-                                <a href="tel:0957962728" className="text-2xl font-heading font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
-                                    095 796 2728
+                                <a href={BUSINESS.phone.href} className="text-2xl font-heading font-bold text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors">
+                                    {BUSINESS.phone.display}
                                 </a>
-                                <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Dostupni smo od 08:00 do 16:00</span>
+                                <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Dostupni smo od {BUSINESS.hours}</span>
                             </div>
                         </div>
 
@@ -147,8 +158,8 @@ export function Contact() {
                             </div>
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Email</span>
-                                <a href="mailto:interijeri@dogan.hr" className="text-lg md:text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors break-all">
-                                    interijeri@dogan.hr
+                                <a href={`mailto:${BUSINESS.email}`} className="text-lg md:text-xl font-heading font-medium text-[var(--color-primary)] hover:text-[var(--color-accent)] transition-colors break-all">
+                                    {BUSINESS.email}
                                 </a>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">Odgovaramo unutar 24 sata</span>
                             </div>
@@ -161,10 +172,10 @@ export function Contact() {
                             <div>
                                 <span className="block text-xs font-bold text-[var(--color-muted)] uppercase tracking-widest mb-2">Adresa / Regija</span>
                                 <span className="block text-xl font-heading font-medium text-[var(--color-primary)]">
-                                    Varaždinska cesta 1, 10360 Sesvete
+                                    {BUSINESS.address.display}
                                 </span>
                                 <span className="block text-sm text-[var(--color-muted)] font-light mt-1">
-                                    Poslujemo na području Zagreba i okolice
+                                    Poslujemo na području {BUSINESS.area}
                                 </span>
                             </div>
                         </div>

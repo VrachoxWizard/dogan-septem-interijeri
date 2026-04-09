@@ -6,6 +6,7 @@
     <link rel="apple-touch-icon" href="/images/logo.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#104c96" />
+    <link rel="preload" as="image" href="/images/hero-bg.jpg" />
     <meta name="description" content="Dogan Septem Interijeri – specijalizirani za kompletne adaptacije stanova, poslovnih prostora i kupaonica u Zagrebu i okolici. Kvalitetna izvedba, poštivanje rokova." />
     <link rel="canonical" href="https://dogan-septem-interijeri.vercel.app/" />
 
@@ -46,7 +47,17 @@
     </script>
   </head>
   <body>
-    <div id="root"></div>
+    <div id="root">
+      <noscript>
+        <div style="max-width:600px;margin:80px auto;padding:40px 20px;font-family:Inter,sans-serif;color:#333;text-align:center">
+          <h1 style="font-family:Montserrat,sans-serif;color:#104c96;font-size:24px;margin-bottom:16px">Dogan Septem – Interijeri</h1>
+          <p style="margin-bottom:24px">Za prikaz stranice potreban je JavaScript.</p>
+          <p><strong>Telefon:</strong> <a href="tel:+385957962728">095 796 2728</a></p>
+          <p><strong>Email:</strong> <a href="mailto:interijeri@dogan.hr">interijeri@dogan.hr</a></p>
+          <p><strong>Adresa:</strong> Varaždinska cesta 1, 10360 Sesvete</p>
+        </div>
+      </noscript>
+    </div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

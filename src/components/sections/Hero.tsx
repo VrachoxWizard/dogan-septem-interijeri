@@ -5,11 +5,14 @@ export function Hero() {
     return (
         <section className="relative h-svh min-h-[500px] flex items-center justify-center overflow-hidden">
             {/* Background Image */}
-            <div
-                className="absolute inset-0 z-0 bg-cover bg-center bg-no-repeat bg-[var(--color-primary)]"
-                style={{ backgroundImage: "url('/images/hero-bg.jpg')" }}
-            >
-                {/* Dark overlay for text readability as per reference */}
+            <div className="absolute inset-0 z-0 bg-[var(--color-primary)]">
+                <img
+                    src="/images/hero-bg.jpg"
+                    alt=""
+                    fetchPriority="high"
+                    className="absolute inset-0 w-full h-full object-cover object-center"
+                />
+                {/* Dark overlay for text readability */}
                 <div className="absolute inset-0 bg-[var(--color-primary)]/70 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-black/30"></div>
             </div>

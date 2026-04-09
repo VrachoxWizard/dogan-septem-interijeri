@@ -1,12 +1,6 @@
 import { Section } from '../layout/Section';
 import { motion } from 'framer-motion';
-
-const steps = [
-    { number: '01', title: 'Razumijevanje prostora', desc: 'Započinjemo razumijevanjem vaših potreba, načina korištenja prostora i očekivanja. Analiziramo svaki detalj prije prve linije nacrta.' },
-    { number: '02', title: 'Jasna organizacija', desc: 'Slijedi detaljna razrada faza projekta uz jasan vremenski okvir, troškovnik i strogu specifikaciju materijala bez skrivenih troškova.' },
-    { number: '03', title: 'Precizna izvedba', desc: 'Izvođenje svih radova obavlja naš stručni tim, uz stalnu direktnu komunikaciju, redovite izvještaje i precizan inženjerski nadzor.' },
-    { number: '04', title: 'Završna kvaliteta', desc: 'Detaljan pregled izvedenih radova, besprijekorno čišćenje i predaja prostora spremnog za dugogodišnje optimalno korištenje.' }
-];
+import { processSteps } from '../../lib/data';
 
 export function Process() {
     return (
@@ -34,7 +28,7 @@ export function Process() {
 
                 <div className="lg:w-2/3">
                     <div className="grid grid-cols-1 md:grid-cols-2 gap-x-12 gap-y-16">
-                        {steps.map((step, index) => (
+                        {processSteps.map((step, index) => (
                             <motion.div
                                 key={index}
                                 initial={{ opacity: 0, y: 30 }}

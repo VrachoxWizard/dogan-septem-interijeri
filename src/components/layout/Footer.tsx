@@ -1,5 +1,6 @@
 
 import { Logo } from '../ui/Logo';
+import { BUSINESS } from '../../lib/constants';
 
 export function Footer() {
     return (
@@ -18,15 +19,15 @@ export function Footer() {
                         <ul className="space-y-4 text-sm text-gray-300">
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Telefon</span>
-                                <a href="tel:0957962728" className="font-medium hover:text-white transition-colors text-base">095 796 2728</a>
+                                <a href={BUSINESS.phone.href} className="font-medium hover:text-white transition-colors text-base">{BUSINESS.phone.display}</a>
                             </li>
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Email</span>
-                                <a href="mailto:interijeri@dogan.hr" className="font-medium hover:text-white transition-colors text-base">interijeri@dogan.hr</a>
+                                <a href={`mailto:${BUSINESS.email}`} className="font-medium hover:text-white transition-colors text-base">{BUSINESS.email}</a>
                             </li>
                             <li>
                                 <span className="block text-gray-400 mb-1 text-xs uppercase tracking-wider">Adresa</span>
-                                <span className="font-medium text-base">Varaždinska cesta 1, 10360 Sesvete</span>
+                                <span className="font-medium text-base">{BUSINESS.address.display}</span>
                             </li>
                         </ul>
                     </div>
@@ -44,7 +45,7 @@ export function Footer() {
                 </div>
 
                 <div className="border-t border-white/15 pt-8 flex flex-col md:flex-row justify-between items-center text-xs text-gray-400">
-                    <p>&copy; {new Date().getFullYear()} Dogan Septem d.o.o. Sva prava pridržana.</p>
+                    <p>&copy; {new Date().getFullYear()} {BUSINESS.legalName}. Sva prava pridržana.</p>
                 </div>
             </div>
         </footer>
