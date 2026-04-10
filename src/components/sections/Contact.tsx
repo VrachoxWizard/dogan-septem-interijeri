@@ -130,23 +130,29 @@ export function Contact() {
         setErrorMsg('');
 
         try {
+            const requestBody = new FormData(form);
+            requestBody.set('access_key', WEB3FORMS_ACCESS_KEY);
+            requestBody.set('subject', `Novi upit – ${normalizedProject || 'Općenito'}`);
+            requestBody.set('from_name', normalizedName);
+            requestBody.set('name', normalizedName);
+            requestBody.set('project', normalizedProject);
+            requestBody.set('message', normalizedMessage);
+            requestBody.set('contact', parsedContact.value);
+            requestBody.set('contact_type', parsedContact.kind);
+            requestBody.set('botcheck', honeypotValue ?? '');
+
+            if (parsedContact.kind === 'email') {
+                requestBody.set('email', parsedContact.email);
+                requestBody.set('replyto', parsedContact.replyto);
+            } else {
+                requestBody.set('phone', parsedContact.phone);
+                requestBody.delete('email');
+                requestBody.delete('replyto');
+            }
+
             const res = await fetch('https://api.web3forms.com/submit', {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    access_key: WEB3FORMS_ACCESS_KEY,
-                    subject: `Novi upit – ${normalizedProject || 'Općenito'}`,
-                    from_name: normalizedName,
-                    name: normalizedName,
-                    project: normalizedProject,
-                    message: normalizedMessage,
-                    contact: parsedContact.value,
-                    contact_type: parsedContact.kind,
-                    botcheck: honeypotValue ?? '',
-                    ...(parsedContact.kind === 'email'
-                        ? { email: parsedContact.email, replyto: parsedContact.replyto }
-                        : { phone: parsedContact.phone }),
-                }),
+                body: requestBody,
             });
 
             const data = await res.json() as { success?: boolean; message?: string };
