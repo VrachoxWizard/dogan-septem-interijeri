@@ -40,6 +40,7 @@ export function Gallery() {
 
                 <div className="flex gap-4">
                     <button
+                        type="button"
                         onClick={scrollPrev}
                         className="w-14 h-14 bg-white border border-[var(--color-border-light)] flex items-center justify-center text-[var(--color-primary)] hover:border-[var(--color-accent)] transition-all duration-300 cursor-pointer"
                         aria-label="Prethodna slika"
@@ -47,6 +48,7 @@ export function Gallery() {
                         <ChevronLeft size={24} strokeWidth={1.5} />
                     </button>
                     <button
+                        type="button"
                         onClick={scrollNext}
                         className="w-14 h-14 bg-white border border-[var(--color-border-light)] flex items-center justify-center text-[var(--color-primary)] hover:border-[var(--color-accent)] transition-all duration-300 cursor-pointer"
                         aria-label="Sljedeća slika"
@@ -57,6 +59,7 @@ export function Gallery() {
             </div>
 
             <div
+                id="gallery-carousel"
                 className="overflow-hidden"
                 ref={emblaRef}
                 role="region"
@@ -81,6 +84,9 @@ export function Gallery() {
                                     className="absolute inset-0 w-full h-full object-cover transition-transform duration-1000 group-hover:scale-105"
                                     draggable={false}
                                     loading="lazy"
+                                    onError={(e) => {
+                                        e.currentTarget.style.visibility = 'hidden';
+                                    }}
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-[var(--color-primary)]/90 via-[var(--color-primary)]/20 to-transparent opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-opacity duration-500"></div>
                                 <div className="absolute bottom-0 left-0 right-0 p-8 translate-y-0 md:translate-y-6 md:group-hover:translate-y-0 opacity-100 md:opacity-0 md:group-hover:opacity-100 transition-all duration-500">
@@ -93,10 +99,10 @@ export function Gallery() {
                 </div>
             </div>
 
-            {/* Position Indicators */}
             <div className="flex justify-center gap-2 mt-8">
                 {galleryItems.map((_, index) => (
                     <button
+                        type="button"
                         key={index}
                         className={`w-2.5 h-2.5 rounded-full transition-all duration-300 cursor-pointer ${
                             index === selectedIndex
@@ -105,6 +111,8 @@ export function Gallery() {
                         }`}
                         onClick={() => emblaApi?.scrollTo(index)}
                         aria-label={`Idi na sliku ${index + 1}`}
+                        aria-controls="gallery-carousel"
+                        aria-pressed={index === selectedIndex}
                     />
                 ))}
             </div>

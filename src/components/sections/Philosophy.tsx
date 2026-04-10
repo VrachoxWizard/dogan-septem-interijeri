@@ -11,7 +11,7 @@ export function Philosophy() {
                     viewport={{ once: true, margin: "-100px" }}
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                 >
-                    <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-8">Naša Filozofija</span>
+                    <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-8">Naša filozofija</span>
                     <blockquote className="mb-12">
                         <p className="text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-heading font-bold text-[var(--color-primary)] leading-[1.1]">
                             "Dobar prostor <br className="hidden md:block" />nije samo lijep.<br />

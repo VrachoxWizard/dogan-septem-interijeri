@@ -1,7 +1,10 @@
+import { useState } from 'react';
 import { Section } from '../layout/Section';
 import { motion } from 'framer-motion';
 
 export function About() {
+    const [imageUnavailable, setImageUnavailable] = useState(false);
+
     return (
         <Section id="o-nama" bg="white" className="py-24 md:py-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -46,16 +49,26 @@ export function About() {
                     transition={{ duration: 1, ease: [0.16, 1, 0.3, 1] }}
                     className="relative h-[350px] md:h-[450px] lg:h-[600px] w-full mt-10 lg:mt-0"
                 >
-                    {/* Decorative architectural frame */}
                     <div className="absolute -inset-6 border border-[var(--color-border-light)] transform translate-x-6 translate-y-6 z-0 hidden md:block"></div>
                     <div className="absolute inset-0 bg-[var(--color-surface)] z-10 overflow-hidden shadow-2xl">
-                        <img
-                            src="/images/about-team.jpg"
-                            alt="Adaptacija interijera"
-                            className="w-full h-full object-cover object-center"
-                            loading="lazy"
-                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                        />
+                        {imageUnavailable ? (
+                            <div className="flex h-full items-end bg-gradient-to-br from-[var(--color-surface)] via-white to-[var(--color-surface)] p-8 md:p-10">
+                                <div>
+                                    <span className="block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-3">Vizual privremeno nedostupan</span>
+                                    <p className="max-w-sm text-lg font-light text-[var(--color-muted)]">
+                                        Fotografija tima trenutno nije dostupna, ali projekt i dalje ostaje potpuno pregledan.
+                                    </p>
+                                </div>
+                            </div>
+                        ) : (
+                            <img
+                                src="/images/about-team.jpg"
+                                alt="Adaptacija interijera"
+                                className="w-full h-full object-cover object-center"
+                                loading="lazy"
+                                onError={() => setImageUnavailable(true)}
+                            />
+                        )}
                     </div>
                 </motion.div>
             </div>

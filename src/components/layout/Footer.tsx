@@ -1,4 +1,3 @@
-
 import { Logo } from '../ui/Logo';
 import { BUSINESS } from '../../lib/constants';
 

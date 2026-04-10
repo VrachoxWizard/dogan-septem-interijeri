@@ -1,8 +1,11 @@
+import { useState } from 'react';
 import { Section } from '../layout/Section';
 import { motion } from 'framer-motion';
 import { whyUsReasons } from '../../lib/data';
 
 export function WhyUs() {
+    const [imageUnavailable, setImageUnavailable] = useState(false);
+
     return (
         <Section id="zasto-mi" bg="navy" className="py-24 md:py-32">
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center">
@@ -13,17 +16,29 @@ export function WhyUs() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="order-2 lg:order-1 relative h-[350px] md:h-[500px] lg:h-[700px] w-full"
                 >
-                    {/* Decorative frame */}
                     <div className="absolute -inset-6 border border-white/10 transform -translate-x-6 translate-y-6 z-0 hidden md:block"></div>
                     <div className="absolute inset-0 bg-[#0a356c] z-10 overflow-hidden shadow-2xl">
-                        <img
-                            src="/images/whyus-interior.jpg"
-                            alt="Precizna izvedba i detalji"
-                            className="w-full h-full object-cover object-center grayscale-[10%] contrast-125 opacity-80"
-                            loading="lazy"
-                            onError={(e) => { e.currentTarget.style.display = 'none'; }}
-                        />
-                        <div className="absolute inset-0 bg-[var(--color-primary)]/40 mix-blend-multiply"></div>
+                        {imageUnavailable ? (
+                            <div className="flex h-full items-end bg-gradient-to-br from-[#0a356c] via-[var(--color-primary)] to-[#08284f] p-8 md:p-10">
+                                <div>
+                                    <span className="block text-xs font-bold uppercase tracking-widest text-[var(--color-accent)] mb-3">Vizual privremeno nedostupan</span>
+                                    <p className="max-w-sm text-lg font-light text-gray-300">
+                                        Fotografija projekta nije učitana, ali ključne informacije o našem pristupu ostaju dostupne.
+                                    </p>
+                                </div>
+                            </div>
+                        ) : (
+                            <>
+                                <img
+                                    src="/images/whyus-interior.jpg"
+                                    alt="Precizna izvedba i detalji"
+                                    className="w-full h-full object-cover object-center grayscale-[10%] contrast-125 opacity-80"
+                                    loading="lazy"
+                                    onError={() => setImageUnavailable(true)}
+                                />
+                                <div className="absolute inset-0 bg-[var(--color-primary)]/40 mix-blend-multiply"></div>
+                            </>
+                        )}
                     </div>
                 </motion.div>
 
@@ -34,7 +49,7 @@ export function WhyUs() {
                     transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                     className="order-1 lg:order-2"
                 >
-                    <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Zašto Odabrati Nas</span>
+                    <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Zašto odabrati nas</span>
                     <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-10 text-white leading-[1.15]">
                         Ne tražimo prečace,<br />
                         radimo <span className="text-[var(--color-accent)]">kako treba.</span>

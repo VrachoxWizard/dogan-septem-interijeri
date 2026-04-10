@@ -14,7 +14,7 @@ export function Process() {
                         transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
                         className="lg:sticky lg:top-32"
                     >
-                        <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Naš Pristup</span>
+                        <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Naš pristup</span>
                         <h2 className="text-3xl md:text-4xl lg:text-5xl font-heading font-bold mb-8 text-[var(--color-primary)] leading-[1.2]">
                             Mi ne radimo <br className="hidden lg:block" /> po šabloni.
                         </h2>

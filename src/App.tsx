@@ -1,3 +1,4 @@
+import { useEffect } from 'react';
 import { Navbar } from './components/layout/Navbar';
 import { Footer } from './components/layout/Footer';
 import { Hero } from './components/sections/Hero';
@@ -11,13 +12,44 @@ import { Gallery } from './components/sections/Gallery';
 import { Contact } from './components/sections/Contact';
 
 function App() {
+  useEffect(() => {
+    const scrollToHashTarget = () => {
+      const hash = window.location.hash.replace('#', '');
+      if (!hash) return;
+
+      const target = document.getElementById(decodeURIComponent(hash));
+      target?.scrollIntoView();
+    };
+
+    const frame = requestAnimationFrame(scrollToHashTarget);
+    const timeoutId = window.setTimeout(scrollToHashTarget, 100);
+
+    window.addEventListener('hashchange', scrollToHashTarget);
+
+    return () => {
+      cancelAnimationFrame(frame);
+      window.clearTimeout(timeoutId);
+      window.removeEventListener('hashchange', scrollToHashTarget);
+    };
+  }, []);
+
+  const handleSkipToContent = () => {
+    requestAnimationFrame(() => {
+      document.getElementById('main-content')?.focus();
+    });
+  };
+
   return (
-    <div className="min-h-screen">
-      <a href="#o-nama" className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[var(--color-accent)] focus:text-white focus:px-4 focus:py-2 focus:font-bold focus:text-sm">
+    <div id="top" className="min-h-screen">
+      <a
+        href="#main-content"
+        onClick={handleSkipToContent}
+        className="sr-only focus:not-sr-only focus:fixed focus:top-4 focus:left-4 focus:z-[100] focus:bg-[var(--color-accent)] focus:text-white focus:px-4 focus:py-2 focus:font-bold focus:text-sm"
+      >
         Preskoči na sadržaj
       </a>
       <Navbar />
-      <main>
+      <main id="main-content" tabIndex={-1}>
         <Hero />
         <About />
         <Services />

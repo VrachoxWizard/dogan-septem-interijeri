@@ -16,7 +16,7 @@ export const services: Service[] = [
     { icon: Zap, title: 'Instalacije', desc: 'Izvođenje moderne elektro i vodoinstalacije sa certifikatima.' },
     { icon: PaintRoller, title: 'Završni radovi', desc: 'Soboslikarski poslovi i besprijekorna estetska završna obrada.' },
     { icon: Sofa, title: 'Montaža namještaja', desc: 'Profesionalna montaža kuhinja, ormara, garderoba i ostalog namještaja po mjeri.' },
-    { icon: ClipboardCheck, title: 'Koordinacija', desc: 'Cjelovito vođenje svih faza projekta – vi komunicirate samo sa nama.' },
+    { icon: ClipboardCheck, title: 'Koordinacija', desc: 'Cjelovito vođenje svih faza projekta – vi komunicirate samo s nama.' },
 ];
 
 export interface GalleryItem {

@@ -1,18 +1,22 @@
-import { Button } from '../ui/Button';
+import { useState } from 'react';
+import { buttonStyles } from '../ui/buttonStyles';
 import { motion } from 'framer-motion';
 
 export function Hero() {
+    const [backgroundImageFailed, setBackgroundImageFailed] = useState(false);
+
     return (
         <section className="relative h-svh min-h-[500px] flex items-center justify-center overflow-hidden">
-            {/* Background Image */}
             <div className="absolute inset-0 z-0 bg-[var(--color-primary)]">
-                <img
-                    src="/images/hero-bg.jpg"
-                    alt=""
-                    fetchPriority="high"
-                    className="absolute inset-0 w-full h-full object-cover object-center"
-                />
-                {/* Dark overlay for text readability */}
+                {!backgroundImageFailed && (
+                    <img
+                        src="/images/hero-bg.jpg"
+                        alt=""
+                        fetchPriority="high"
+                        className="absolute inset-0 w-full h-full object-cover object-center"
+                        onError={() => setBackgroundImageFailed(true)}
+                    />
+                )}
                 <div className="absolute inset-0 bg-[var(--color-primary)]/70 mix-blend-multiply"></div>
                 <div className="absolute inset-0 bg-black/30"></div>
             </div>
@@ -38,15 +42,18 @@ export function Hero() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4 sm:gap-5">
-                        <a href="#kontakt" className="w-full sm:w-auto">
-                            <Button variant="accent" size="lg" className="w-full">
-                                Zatraži ponudu
-                            </Button>
+                        <a href="#kontakt" className={buttonStyles({ variant: 'accent', size: 'lg', className: 'w-full sm:w-auto' })}>
+                            Zatraži ponudu
                         </a>
-                        <a href="#kontakt" className="w-full sm:w-auto">
-                            <Button variant="outline" size="lg" className="w-full border-white/30 text-white hover:bg-white hover:text-[var(--color-primary)] hover:border-white">
-                                Kontaktiraj nas
-                            </Button>
+                        <a
+                            href="#kontakt"
+                            className={buttonStyles({
+                                variant: 'outline',
+                                size: 'lg',
+                                className: 'w-full sm:w-auto border-white/30 text-white hover:bg-white hover:text-[var(--color-primary)] hover:border-white'
+                            })}
+                        >
+                            Kontaktiraj nas
                         </a>
                     </div>
                 </motion.div>

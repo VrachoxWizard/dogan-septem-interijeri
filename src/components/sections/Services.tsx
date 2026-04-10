@@ -8,7 +8,7 @@ export function Services() {
             <div className="absolute top-0 left-0 right-0 h-40 bg-white"></div>
 
             <div className="text-center max-w-4xl mx-auto mb-20 bg-white py-16 px-6 lg:px-12 shadow-[0_20px_40px_-15px_rgba(0,0,0,0.05)] border border-[var(--color-border-light)] relative z-10 transform -translate-y-12">
-                <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Naše Usluge</span>
+                <span className="block text-xs font-bold text-[var(--color-accent)] uppercase tracking-widest mb-4">Naše usluge</span>
                 <h2 className="text-3xl md:text-5xl font-heading font-bold mb-6 text-[var(--color-primary)]">
                     Sve na jednom mjestu
                 </h2>
