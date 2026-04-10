@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://dogan-septem-interijeri.vercel.app/sitemap.xml
+Sitemap: https://www.doganseptem-interijeri.hr/sitemap.xml

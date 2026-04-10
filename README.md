@@ -2,7 +2,7 @@
 
 Marketing website for **Dogan Septem d.o.o.** — interior renovation and complete apartment/office adaptations in Zagreb, Croatia.
 
-**Live:** [dogan-septem-interijeri.vercel.app](https://dogan-septem-interijeri.vercel.app/)
+**Live:** [www.doganseptem-interijeri.hr](https://www.doganseptem-interijeri.hr/)
 
 ## Tech Stack
 
