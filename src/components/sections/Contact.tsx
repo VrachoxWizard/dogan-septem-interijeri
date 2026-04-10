@@ -108,10 +108,13 @@ export function Contact() {
                             <div className="relative mb-10 mt-6">
                                 <select id="project" name="project" required value={formData.project} onChange={(e) => setFormData(prev => ({ ...prev, project: e.target.value }))} className="peer w-full h-12 bg-transparent border-b border-[var(--color-border-light)] focus:border-[var(--color-accent)] outline-none transition-colors text-[var(--color-foreground)] appearance-none rounded-none font-light">
                                     <option value="" disabled hidden>Odaberite vrstu radova</option>
-                                    <option value="Adaptacija stana" className="text-black">Adaptacija stana</option>
-                                    <option value="Adaptacija poslovnog prostora" className="text-black">Adaptacija poslovnog prostora</option>
-                                    <option value="Adaptacija kupaonice" className="text-black">Adaptacija kupaonice</option>
-                                    <option value="Ostali radovi" className="text-black">Ostali radovi</option>
+                                    <option value="Adaptacija" className="text-black">Adaptacija</option>
+                                    <option value="Soboslikarski radovi" className="text-black">Soboslikarski radovi</option>
+                                    <option value="Gipskartonski radovi" className="text-black">Gipskartonski radovi</option>
+                                    <option value="Elektroinstalacije" className="text-black">Elektroinstalacije</option>
+                                    <option value="Voda i odvodnja" className="text-black">Voda i odvodnja</option>
+                                    <option value="Postavljanje laminata i vinil podova" className="text-black">Postavljanje laminata i vinil podova</option>
+                                    <option value="Montaža namještaja" className="text-black">Montaža namještaja</option>
                                 </select>
                                 <div className="absolute inset-y-0 right-0 flex items-center pointer-events-none">
                                     <svg className="w-5 h-5 text-[var(--color-muted)]" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="1.5" d="M19 9l-7 7-7-7"></path></svg>
